@@ -1,0 +1,122 @@
+Index,Name,gt_ID,gt_Name,Predicted Match,Actual Match,Exact,.,other punctuation,white space,truncation,spelling mistakes,var lacks suffix,gt lacks suffix,long vs short suffix,extra words,insurance words,the,acronym,.com
+0,ADOLF WÜRTH GMBH & CO KG,522287,ADOLF WUERTH GMBH & CO. KG,0,1,0,0,1,0,,,,,,,,0,,0
+1,ALTONA DIAGNOSTICS GMBH,1478161,ALTONA DIAGNOSTICS GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+2,ARA AG - Management board,514449,ARA AG,0,1,0,0,1,0,,,,,,,,0,,0
+3,ARA AG - Supervisory board,514449,ARA AG,0,1,0,0,1,0,,,,,,,,0,,0
+4,ARTRON EUROPE GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+5,ATI Logistik GmbH & Co. KG,,,0,0,0,1,1,0,,,,,,,,0,,0
+6,Aergo Holdings Limited,,,0,0,0,0,0,0,,,,,,,,0,,0
+7,Aluminium Rheinfelden Alloys GmbH,3224279,ALUMINIUM RHEINFELDEN ALLOYS GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+8,BA23,,,0,0,0,0,0,0,,,,,,,,0,,0
+9,BEC GESELLSCHAFT FÜR PRODUKT-MNAGEMENT MBH,,,0,0,0,0,1,0,,,,,,,,0,,0
+10,BOLLMANN BRENNSTOFFE GMBH,,,0,0,0,0,0,0,,,,,,,,0,,0
+11,Balandis Real Estate GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+12,Batavus II,,,0,0,0,0,0,0,,,,,,,,0,,0
+13,Broetje-Automation GmbH,499368,BROETJE-AUTOMATION GMBH,0,1,0,0,1,0,,,,,,,,0,,0
+14,CARCOUSTICS BELGIUM N.V. - MNC CAS -  CARCOUSTICSINTERNATIONAL GMBH,1034505,CARCOUSTICS INTERNATIONAL GMBH,0,1,0,1,1,0,,,,,,,,0,,0
+15,CARCOUSTICS INTERNATIONAL,1034505,CARCOUSTICS INTERNATIONAL GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+16,CARLINO 1 S.R.L.,,,0,0,0,1,0,0,,,,,,,,0,,0
+17,CARLINO FTV 2 S.A.S. DI ITALIAN SOLARPOWER PROJECTS 1 S.R.L.,,,0,0,0,1,0,0,,,,,,,,0,,0
+18,CARLINO FTV 3 S.R.L.,,,0,0,0,1,0,0,,,,,,,,0,,0
+19,Certa Batavus II,,,0,0,0,0,0,0,,,,,,,,0,,0
+20,Certa ESB Nord,,,0,0,0,0,0,0,,,,,,,,0,,0
+21,DB Energie GmbH,1327246,DB ENERGIE GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+22,DEUTSCHE INDUSTRIE UND PARKHAUSBAU GMBH,,,0,0,0,0,0,0,,,,,,,,0,,0
+23,DR WILLMAR SCHWABE GMBH AND CO KG,,,0,0,0,0,0,0,,,,,,,,0,,0
+24,Dastex Group GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+25,Data Modul Ag,171938,DATA MODUL AG,0,1,0,0,0,0,,,,,,,,0,,0
+26,Deutsches Rotes Kreuz Kreisverband Mannheim e.V.,,,0,0,0,1,0,0,,,,,,,,0,,0
+27,ECOBAT Resources Germany,3316277,ECOBAT LLC,0,1,0,0,0,0,,,,,,,,0,,0
+28,EZN B.V. - MNC CAS - BOCHUMER ELEKTROMOTORENWERK W,,,0,0,0,1,1,0,,,,,,,,0,,0
+29,Eichhorn AG,,,0,0,0,0,0,0,,,,,,,,0,,0
+30,FERRERO DEUTSCHLAND,,,0,0,0,0,0,0,,,,,,,,0,,0
+31,Frankfurter Bankgesellschaft (Deutschland) AG,,,0,0,0,0,1,0,,,,,,,,0,,0
+32,Fraunhofer Gesellschaft Instit ut für Molekularbiologie und a,,,0,0,0,0,0,0,,,,,,,,0,,0
+33,Fraunhofer Gesellschaft Institut für Molekularbiologie und angewandte Ökologie TMP Projektgruppe,,,0,0,0,0,0,0,,,,,,,,0,,0
+34,Fraunhofer-Gesellschaft,,,0,0,0,0,1,0,,,,,,,,0,,0
+35,Fraunhofer-Gesellschaft e.V. f ür sein Fraunhofer ITMP Frankf,,,0,0,0,1,1,0,,,,,,,,0,,0
+36,Fraunhofer-Gesellschaft e.V. für sein Fraunhofer ITMP Frankfurt,,,0,0,0,1,1,0,,,,,,,,0,,0
+37,Fuchs Petrolub Se,418830,FUCHS SE,0,1,0,0,0,0,,,,,,,,0,,0
+38,GKW Consult GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+39,GLASFASERPLUS (GERMANY),,,0,0,0,0,1,0,,,,,,,,0,,0
+40,GREENPEAK Continuation Fund I (Certania) GmbH & Co. KG,,,0,0,0,1,1,0,,,,,,,,0,,0
+41,GREENPEAK Continuation Fund I (Certania) GmbH & Co. KG; GREENPEAK Continuation Fund I Aggregator GmbH & Co. KG et al,,,0,0,0,1,1,0,,,,,,,,0,,0
+42,Gebr. Brasseler GmbH & Co. KG,,,0,0,0,1,1,0,,,,,,,,0,,0
+43,Gesellschaft der Europahäuser und Europäischen Akademien e.V.,,,0,0,0,1,0,0,,,,,,,,0,,0
+44,Gesellschaft der Europäischen Akademien e.V.,,,0,0,0,1,0,0,,,,,,,,0,,0
+45,HELU KABEL GmbH,528674,HELU KABEL GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+46,HUGO KERN UND LIEBERS GMBH & CO. KG,526673,KERN LIEBERS GMBH & CO. KG,0,1,0,1,1,0,,,,,,,,0,,0
+47,HUGO KERN UND LIEBERS GMBH AND CO KG PLATINEN UND FEDERNFABRIK,526673,KERN LIEBERS GMBH & CO. KG,0,1,0,0,0,0,,,,,,,,0,,0
+48,HYMMEN GMBH MASCHINEN- UND ANLAGENBAU,,,0,0,0,0,1,0,,,,,,,,0,,0
+49,Hagiwara Electric Europe,2113863,HAGIWARA ELECTRIC EUROPE GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+50,Hamburg Commercial Bank,2337862,HAMBURG COMMERCIAL BANK AG,0,1,0,0,0,0,,,,,,,,0,,0
+51,Heidelberg Materials AG,395545,HEIDELBERG MATERIALS AG,0,1,0,0,0,0,,,,,,,,0,,0
+52,Heimkreiter GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+53,Hüpeden & CO (GmbH & Co.),,,0,0,0,1,1,0,,,,,,,,0,,0
+54,ICM InvestmentBank AG,,,0,0,0,0,0,0,,,,,,,,0,,0
+55,ILJIN GmbH,929573,ILJIN EUROPE GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+56,ILJIN Motion & Control GmbH,929573,ILJIN EUROPE GMBH,0,1,0,0,1,0,,,,,,,,0,,0
+57,ILS AG,,,0,0,0,0,0,0,,,,,,,,0,,0
+58,IPSEN GROUP HOLDING GMBH,2233174,IPSEN INTERNATIONAL HOLDING GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+59,IPSEN INTERNATIONAL HOLDI,2233174,IPSEN INTERNATIONAL HOLDING GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+60,Infraserv GmbH & Co. Höchst KG,598823,INFRASERV GMBH & CO. HÖCHST KG,0,1,0,1,1,0,,,,,,,,0,,0
+61,JCM Europe GmbH,508467,JCM EUROPE GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+62,K + S Aktiengesellschaft,377209,K+S AKTIENGESELLSCHAFT,0,1,0,0,1,0,,,,,,,,0,,0
+63,KARG REAL ESTATE GMBH,,,0,0,0,0,0,0,,,,,,,,0,,0
+64,KARL,,,0,0,0,0,0,0,,,,,,,,0,,0
+65,KUBOTA BRABENDER TECHNOLO,436035,KUBOTA BRABENDER TECHNOLOGIE GMBH,0,0,0,0,0,0,,,,,,,,0,,0
+66,Kure Grinding Wheel (Deutschland) GmbH,,,0,0,0,0,1,0,,,,,,,,0,,0
+67,LENZ ENERGIE AG,,,0,0,0,0,0,0,,,,,,,,0,,0
+68,LEUENDORFF GEBÄUDETECHNIK  ENERGIE- UND MINERALÖLH NERALÖLHA,491344,LEUENDORFF GEBAEUDETECHNIK ENERGIE- UND MINERALOELHANDEL GMBH,0,1,0,0,1,0,,,,,,,,0,,0
+69,La Famiglia GmbH,1334524,LA FAMIGLIA FONDS I GMBH & CO. KG,0,1,0,0,0,0,,,,,,,,0,,0
+70,La Famiglia II GmbH,1059865,LA FAMIGLIA FONDS II GMBH & CO. KG,0,1,0,0,0,0,,,,,,,,0,,0
+71,Langer-Umzüge GmbH,,,0,0,0,0,1,0,,,,,,,,0,,0
+72,Lehel Höfe GmbH c/o Athos KG,,,0,0,0,0,1,0,,,,,,,,0,,0
+73,Logwin AG,,,0,0,0,0,0,0,,,,,,,,0,,0
+74,Losberger De Boer Holding,2395936,LOSBERGER DE BOER HOLDING GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+75,MAIERGROUP VERSICHERUNGSM,,,0,0,0,0,0,0,,,,,,,,0,,0
+76,MAIERGROUP VERSICHERUNGSMAKLER GMBH,,,0,0,0,0,0,0,,,,,,,,0,,0
+77,MARC O´POLO INTERNATIONAL GMBH,537932,MARC O'POLO INTERNATIONAL GMBH,0,0,0,0,1,0,,,,,,,,0,,0
+78,MEDIRA GMBH,,,0,1,0,0,0,0,,,,,,,,0,,0
+79,MOXINO S.Á.R.L.,,,0,0,0,1,0,0,,,,,,,,0,,0
+80,Marsh GmbH,154518,MARSH GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+81,Mitani Europe GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+82,Mitsui Chemicals Europe GmbH,1882050,MITSUI CHEMICALS EUROPE GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+83,MoldTecs-01-2022 GmbH,1505986,MOLDTECS-01-2022 GMBH,0,1,0,0,1,0,,,,,,,,0,,0
+84,Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München,969,MÜNCHENER RÜCKVERSICHERUNGS-GESELLSCHAFT AKTIENGESELLSCHAFT IN MÜNCHEN,0,1,0,0,1,0,,,,,,,,0,,0
+85,NASSAUISCHE SPARKASSE,352875,NASSAUISCHE SPARKASSE,0,1,0,0,0,0,,,,,,,,0,,0
+86,NDEnergie GmbH & Co. KG,,,0,0,0,1,1,0,,,,,,,,0,,0
+87,P & S Vermögensberatungs AG Performance & Sicherheit,,,0,0,0,0,1,0,,,,,,,,0,,0
+88,PCC SE,2329126,PCC SE,0,0,0,0,0,0,,,,,,,,0,,0
+89,PROJECT PCC (PRIME CORPORATE CENTER GMBH&CO KG),2329126,PCC SE,0,0,0,0,1,0,,,,,,,,0,,0
+90,Pensionskasse der Wacker Chemie VVaG,1393359,PENSIONSKASSE DER WACKER CHEMIE VVAG,0,1,0,0,0,0,,,,,,,,0,,0
+91,Peter Kölln GmbH & Co.,499397,PETER KOELLN GMBH & CO. KGAA,0,1,0,1,1,0,,,,,,,,0,,0
+92,Project Haven (1XS),,,0,0,0,0,1,0,,,,,,,,0,,0
+93,RECKITT BENCKISER DEUTSCHLAND GMBHAMG,525552,RECKITT BENCKISER DEUTSCHLAND GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+94,RECKITT BENCKISERDEUTSCHLAND GMBH,525552,RECKITT BENCKISER DEUTSCHLAND GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+95,RENGGLI Deutschland GmbH c/o heberle.mayer GbR,,,0,0,0,1,1,0,,,,,,,,0,,0
+96,RIEDEL COMMUNICATIONS GMB,1478490,RIEDEL COMMUNICATIONS GMBH & CO. KG,0,1,0,0,0,0,,,,,,,,0,,0
+97,RIEDEL COMMUNICATIONS GMBH & CO. KG,1478490,RIEDEL COMMUNICATIONS GMBH & CO. KG,0,1,0,1,1,0,,,,,,,,0,,0
+98,RV TRIO INDUSTRIE SERVICE,1596388,RV TRIO INDUSTRIE SERVICE GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+99,Ralf Nitschke,,,0,0,0,0,0,0,,,,,,,,0,,0
+100,SEVES Group S.ar.l.,606363,SEDIVER,0,1,0,1,0,0,,,,,,,,0,,0
+101,SEVES Group S.àr.l.,606363,SEDIVER,0,1,0,1,0,0,,,,,,,,0,,0
+102,SGB-SMIT Beteiligung GmbH,3085412,SGB-SMIT BETEILIGUNG GMBH,0,1,0,0,1,0,,,,,,,,0,,0
+103,SPARKASSE HANAU,2337049,SPARKASSE HANAU,0,1,0,0,0,0,,,,,,,,0,,0
+104,SPV MABILLON,,,0,0,0,0,0,0,,,,,,,,0,,0
+105,THOMSEN ENERGIE GMBH & CO. KG,,,0,0,0,1,1,0,,,,,,,,0,,0
+106,Tenga Europe GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
+107,UNIVERSITÄTSMEDIZIN DER JOHANNES GUTENBERG,,,0,0,0,0,0,0,,,,,,,,0,,0
+108,UNIVERSITÄTSMEDIZIN DER JOHANNES-GUTENBERG-UNIVERSITÄT,,,0,0,0,0,1,0,,,,,,,,0,,0
+109,Universitatsklinikum Esse,,,0,0,0,0,0,0,,,,,,,,0,,0
+110,VON ARDENNE HOLDING SE &,500796,VON ARDENNE HOLDING SE & CO. KGAA,0,1,0,0,1,0,,,,,,,,0,,0
+111,VON ARDENNE HOLDING SE & CO. KGAA,500796,VON ARDENNE HOLDING SE & CO. KGAA,0,1,0,1,1,0,,,,,,,,0,,0
+112,VOSSLOH AG,381332,VOSSLOH AG,0,1,0,0,0,0,,,,,,,,0,,0
+113,Velvet,1293132,VELVET,0,1,0,0,0,0,,,,,,,,0,,0
+114,WIKA Alexander Wiegand G,530717,WIKA ALEXANDER WIEGAND SE & CO. KG,0,1,0,0,0,0,,,,,,,,0,,0
+115,WIKA Alexander Wiegand SE & Co. KG,530717,WIKA ALEXANDER WIEGAND SE & CO. KG,0,1,0,1,1,0,,,,,,,,0,,0
+116,WINTERHALTER GASTRONOM GMBH,537208,WINTERHALTER GASTRONOM GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+117,Wayss & Freytag Ingenieur,2253553,WAYSS & FREYTAG INGENIEURBAU AG,0,1,0,0,1,0,,,,,,,,0,,0
+118,YASKAWA Turkey Elektrik T,1978686,YASKAWA ELECTRIC,0,1,0,0,0,0,,,,,,,,0,,0
+119,feps GmbH,2520645,EPS HOLDING GMBH,0,1,0,0,0,0,,,,,,,,0,,0
+120,nanotools GmbH,,,0,0,0,0,0,0,,,,,,,,0,,0
