@@ -1,0 +1,56 @@
+
+import streamlit as st
+import pandas as pd
+import unicodedata
+import re
+
+# --- Cleaning function ---
+RE_NEWLINES = re.compile(r'[\r\n]+')
+RE_SPECIAL = re.compile(r'[^A-Za-z0-9 ]+')
+RE_SPACES = re.compile(r'\s+')
+
+def clean_column(series):
+    s = series.astype(str)
+
+    s = s.map(
+        lambda x: unicodedata.normalize('NFKD', x)
+        .encode('ascii', 'ignore')
+        .decode('utf-8')
+    )
+
+    s = s.str.replace(RE_NEWLINES, ' ', regex=True)
+    s = s.str.replace(RE_SPECIAL, '', regex=True)
+    s = s.str.replace(RE_SPACES, ' ', regex=True)
+    s = s.str.strip()
+
+    return s
+
+# --- Streamlit UI ---
+st.title("Excel Column Cleaner")
+
+uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx"])
+
+if uploaded_file:
+    df = pd.read_excel(uploaded_file)
+
+    st.write("Preview:")
+    st.dataframe(df.head())
+
+    column = st.selectbox("Select column to clean", df.columns)
+
+    if st.button("Clean Column"):
+        df["cleaned"] = clean_column(df[column])
+
+        st.success("Cleaning complete ✅")
+        st.dataframe(df.head())
+
+        # Download file
+        output = "cleaned_output.xlsx"
+        df.to_excel(output, index=False)
+
+        with open(output, "rb") as f:
+            st.download_button(
+                "Download Cleaned File",
+                f,
+                file_name=output
+            )
