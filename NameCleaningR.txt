@@ -1,0 +1,160 @@
+import pandas as pd
+import os
+import datetime
+
+from emm import PandasEntityMatching
+import pycountry
+
+import jellyfish
+from functools import partial
+
+import tkinter as tk
+from tkinter import filedialog,messagebox
+
+Model_path = r"Models"
+Input_path = r"Inputs"
+Output_path = r"Outputs"
+os.makedirs(Output_path, exist_ok=True)
+
+def select_file(inital_folder=None):
+    root = tk.Tk()
+    root.withdraw()
+    return filedialog.askopenfilename(
+        initialdir=inital_folder,
+        title="Select an input file",
+        filetypes=[("CSV files", "*.csv")])
+
+def show_message(title,message):
+    root = tk.Tk()
+    root.withdraw()
+    messagebox.showinfo(
+        title=title,
+        message=message
+    )
+    root.destroy()
+
+def phoneticSkip(func,name):
+    onlyLetters = all(char.isalpha()  or char == " " for char in str(name))
+    if onlyLetters: return func(str(name))
+    return ""
+
+def addPhonetics(df, name_col="Name"):
+    df["metaphone"] = df[name_col].apply(partial(phoneticSkip,jellyfish.metaphone))
+    df["soundex"] = df[name_col].apply(partial(phoneticSkip,jellyfish.soundex))
+    df["nysiis"] = df[name_col].apply(partial(phoneticSkip,jellyfish.nysiis))
+    df["mr_codex"] = df[name_col].apply(partial(phoneticSkip,jellyfish.match_rating_codex))
+
+
+def printT(text,**kwargs):
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") , f": {text}", **kwargs)
+
+def distill_outputs(df,
+                   threshold = 0.9):
+    df = df[df.best_match]
+    negative_mask = ~((df.nm_score >= threshold) | (df.score_0 == 1))
+    df.uid = df["index"]
+
+    df.loc[negative_mask , "gt_uid"] = pd.NA
+    df.loc[negative_mask , "gt_name"] = pd.NA
+    df.loc[negative_mask , "score_0"] = pd.NA
+    df.loc[negative_mask , "score_1"] = pd.NA
+    df.loc[negative_mask , "score_2"] = pd.NA
+    df.loc[negative_mask , "nm_score"] = pd.NA
+    df.loc[negative_mask , "Model"] = pd.NA
+
+    return df[["uid","gt_uid","name","gt_name","score_0","score_1","score_2","nm_score","Model"]]
+
+def reassign_best_match(df):
+    df = df.sort_values(by=["uid","nm_score", "gt_entity_id"], ascending=False, na_position="last")
+    gb = df.groupby(["uid"])
+
+    df["best_rank"] = gb["nm_score"].transform(lambda x: range(1, len(x) + 1))
+    df["best_match"] = (df["best_rank"] == 1) & (df["nm_score"].notnull()) & (df["nm_score"] > 0)
+
+    return df
+
+# Model per country + single model for all data
+
+def run_matching(portfolio_df, model, country):
+    matched = model.transform(portfolio_df)
+    matched["Model"] = f"{country}_model"
+    return matched
+
+if __name__ == "__main__":
+
+    if not (file_path := select_file(Input_path)): 
+        printT("No file selected")
+        quit()
+
+    portfolio_name = file_path.split("/")[-1][:-4]
+
+    printT(f"Starting Portfolio: {portfolio_name}" + "="*30)
+    portfolio_df = pd.read_csv(file_path)
+
+    if not all(col in portfolio_df for col in ["Name","CountryCode"]):
+        show_message("Error","Please ensure the company name column is called 'NAME' and country column is called 'CountryCode'. Country names will be handled properly")
+        assert all(col in portfolio_df for col in ["Name","CountryCode"]), "Please ensure the company name column is called 'Name' and country column is called 'CountryCode'. Country names will be handled properly"
+
+    if not all(col in portfolio_df for col in ["uid","index"]):
+        if "uid" in portfolio_df:
+            printT("Copying the 'uid' column to 'index'")
+            portfolio_df["index"] = portfolio_df["uid"].copy()
+        
+        elif "index" in portfolio_df:
+            printT("Copying the 'index' column to 'uid'")
+            portfolio_df["uid"] = portfolio_df["index"].copy()
+        
+        else:
+            printT("Creating new 'uid' and'index'")
+            import numpy as np
+            portfolio_df["index"] = np.arange(portfolio_df.shape[0])
+            portfolio_df["uid"] = np.arange(portfolio_df.shape[0])
+
+    countryMappings = {}
+    for country in portfolio_df.CountryCode.unique():
+        found = False
+        try:
+            if len(str(country)) == 2 and pycountry.countries.get(alpha_2=str(country)):
+                countryMappings[country] = pycountry.countries.get(alpha_2=country).alpha_3
+
+            elif len(str(country)) == 3 and pycountry.countries.get(alpha_3=str(country)):
+                countryMappings[country] = pycountry.countries.get(alpha_3=country).alpha_3
+
+            elif pycountry.countries.search_fuzzy(str(country)):
+                countryMappings[country] = pycountry.countries.search_fuzzy(str(country))[0].alpha_3
+
+            else:
+                countryMappings[country] = country
+        except:
+            countryMappings[country] = country
+
+    portfolio_df["CountryCode"] = portfolio_df.CountryCode.map(countryMappings)
+
+    addPhonetics(portfolio_df)
+
+    transformed_dfs = []
+
+    # print(portfolio_df.columns)
+    # print(portfolio_df["CountryCode"])
+
+    for country, country_df in portfolio_df.groupby("CountryCode"):
+        printT(f"Matching : {country}",end="")
+        try:
+            model = PandasEntityMatching.load(os.path.join(Model_path,f"{country}.pkl"))
+            print()
+        except:
+            print(" : skipped")
+            continue
+        transformed_dfs.append(run_matching(country_df,model,country))
+    
+    printT(f"Matching : ALL")
+    model = PandasEntityMatching.load(os.path.join(Model_path,f"ALL.pkl"))
+    transformed_dfs.append(run_matching(portfolio_df.copy(),model,"ALL"))
+
+    transformed_dfs = pd.concat(transformed_dfs)
+
+    transformed_dfs = reassign_best_match(transformed_dfs)
+    transformed_dfs.to_csv(os.path.join(Output_path,f"{portfolio_name}_full.csv"))
+    distill_outputs(transformed_dfs).to_csv(os.path.join(Output_path,f"{portfolio_name}_short.csv"),index=False)
+    printT(f"Finished: {portfolio_name}" + "="*30)
+    show_message("Finished",f"Finished: {portfolio_name}")
